@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include <QKeyEvent>
+#include <QMoveEvent>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,5 +20,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void moveEvent(QMoveEvent *) override;
+    void keyPressEvent(QKeyEvent *) override;
 };
 #endif // MAINWINDOW_H

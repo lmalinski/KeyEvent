@@ -22,8 +22,8 @@ void MainWindow::moveEvent(QMoveEvent * event)
     if(dx>0 ) textX = "RIGHT";
     else if (dx < 0) textX = "LEFT";
 
-    if(dy>0 ) textY = "UP";
-    else if (dy < 0) textY = "DOWN";
+    if(dy>0 ) textY = "DOWN";
+    else if (dy < 0) textY = "UP";
 
     ui->label->setText(textX+"-"+textY);
     QMainWindow::moveEvent(event);
@@ -44,4 +44,12 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
         position.translate(-10,0); break;
     }
     this->setGeometry(position);
+}
+
+void MainWindow::closeEvent(QCloseEvent * event)
+{
+    Q_UNUSED(event);
+    QMessageBox msg(this);
+    msg.setText("KONIEC");
+    msg.exec();
 }

@@ -5,6 +5,8 @@
 
 #include <QKeyEvent>
 #include <QMoveEvent>
+#include <QCloseEvent>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,5 +25,6 @@ private:
 
     void moveEvent(QMoveEvent *) override;
     void keyPressEvent(QKeyEvent *) override;
+    void closeEvent(QCloseEvent*) override;
 };
 #endif // MAINWINDOW_H
